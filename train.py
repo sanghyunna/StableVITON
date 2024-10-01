@@ -43,7 +43,7 @@ def build_args():
     parser.add_argument("--sd_unlocked", action="store_true")
     parser.add_argument("--all_unlocked", action="store_true")
     parser.add_argument("--only_mid_control", action="store_true")
-    parser.add_argument("--precision", type=int, default=8)
+    parser.add_argument("--precision", type=int, default="mixed")
     parser.add_argument("--num_sanity_val_steps", type=int, default=0)
     parser.add_argument("--pbe_train_mode", action="store_true")
 
