@@ -101,6 +101,14 @@ def build_config(args, config_path=None):
     return config
     
 def main_worker(args):
+    
+    import torch
+    torch.cuda.empty_cache()
+    import gc
+    del variables
+    gc.collect()
+
+
     config = build_config(args)
     OmegaConf.save(config, args.config_save_path)
     model = create_model(args.config_path, config=config).cpu()
