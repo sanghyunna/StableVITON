@@ -15,6 +15,8 @@ from cldm.logger import ImageLogger
 from cldm.model import create_model, load_state_dict
 from utils import save_args
 
+WORKERS = 4
+
 def build_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config_name", type=str, default=None)
@@ -152,21 +154,21 @@ def main_worker(args):
       
     train_dataloader = DataLoader(
         train_dataset,
-        num_workers=4, 
+        num_workers=WORKERS, 
         batch_size=max(args.batch_size//args.n_gpus, 1), 
         shuffle=True, 
         pin_memory=True
     )
     valid_paired_dataloader = DataLoader(
         valid_paired_dataset, 
-        num_workers=4, 
+        num_workers=WORKERS, 
         batch_size=max(args.batch_size//args.n_gpus, 1), 
         shuffle=False, 
         pin_memory=True
     )
     valid_unpaired_dataloader = DataLoader(
         valid_unpaired_dataset, 
-        num_workers=4, 
+        num_workers=WORKERS, 
         batch_size=max(args.batch_size//args.n_gpus, 1), 
         shuffle=False, 
         pin_memory=True
