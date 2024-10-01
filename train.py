@@ -15,7 +15,7 @@ from cldm.logger import ImageLogger
 from cldm.model import create_model, load_state_dict
 from utils import save_args
 
-WORKERS = 4
+WORKERS = 2
 
 def build_args():
     parser = argparse.ArgumentParser()
