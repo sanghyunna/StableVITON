@@ -11,7 +11,7 @@ import torch
 import torch as th
 import torch.nn as nn
 from cleanfid import fid
-from pytorch_lightning.utilities.rank_zero import rank_zero_only
+from pytorch_lightning.utilities.distributed import rank_zero_only
 
 import torchvision.transforms as T
 import torch.nn.functional as F
