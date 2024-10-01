@@ -8,6 +8,7 @@ from omegaconf import OmegaConf
 import pytorch_lightning as pl
 from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.callbacks import ModelCheckpoint
+from pytorch_lightning.utilities import rank_zero_only
 from torch.utils.data import DataLoader, ConcatDataset
 
 from cldm.logger import ImageLogger
