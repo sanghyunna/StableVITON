@@ -25,7 +25,7 @@ import torchvision.transforms as T
 import random
 import torch.nn.functional as F
 from diffusers.models.autoencoders import AutoencoderKL
-from diffusers.models.vae import DecoderOutput
+from diffusers.models.autoencoders.vae import DecoderOutput
 
 from ldm.util import log_txt_as_img, exists, default, ismap, isimage, mean_flat, count_params, instantiate_from_config
 from ldm.modules.ema import LitEma
