@@ -28,7 +28,7 @@ def build_args():
     parser.add_argument("--transform_color", default=None, nargs="+", choices=["hsv", "bright_contrast", "colorjitter", "resize"])
     parser.add_argument("--use_atv_loss", action="store_true")
     parser.add_argument("--valid_epoch_freq", type=int, default=20)
-    parser.add_argument("--save_every_n_epochs", type=int, default=20)
+    parser.add_argument("--save_every_n_epochs", type=int, default=1)
     parser.add_argument("--max_epochs", type=int, default=1000)
     parser.add_argument("--save_root_dir", type=str, default="./logs")
     parser.add_argument("--save_name", type=str, default="dummy")
