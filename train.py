@@ -192,7 +192,6 @@ def main_worker(args):
         precision=args.precision, 
         callbacks=[img_logger, cp_callback], 
         logger=tb_logger, 
-        gpus=1,
         devices=1,
         accelerator="gpu", 
         strategy="ddp", 
