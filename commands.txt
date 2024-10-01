@@ -1,0 +1,25 @@
+Inference
+#### paired
+CUDA_VISIBLE_DEVICES=1 python inference.py --config_path ./configs/VITONHD.yaml --batch_size 4 --model_load_path ./ckpts/VITONHD_PBE_pose.ckpt --save_dir ./results
+
+#### unpaired
+CUDA_VISIBLE_DEVICES=1 python inference.py --config_path ./configs/VITONHD.yaml --batch_size 4 --model_load_path ./ckpts --unpair --save_dir ./results
+
+#### paired repaint
+CUDA_VISIBLE_DEVICES=1 python inference.py --config_path ./configs/VITONHD.yaml --batch_size 4 --model_load_path ./ckptst --repaint --save_dir ./results
+
+#### unpaired repaint
+CUDA_VISIBLE_DEVICES=1 python inference.py --config_path ./configs/VITONHD.yaml --batch_size 4 --model_load_path ./ckpts --unpair --repaint --save_dir ./results
+
+
+
+
+
+
+
+Training
+### Base model training
+CUDA_VISIBLE_DEVICES=1 python train.py --config_name VITONHD --transform_size shiftscale3 hflip --transform_color hsv bright_contrast --save_name Base_test
+
+### ATV loss finetuning
+CUDA_VISIBLE_DEVICES=1 python train.py --config_name VITONHD --transform_size shiftscale3 hflip --transform_color hsv bright_contrast --use_atv_loss --resume_path <first stage model path> --save_name ATVloss_test

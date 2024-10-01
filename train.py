@@ -191,7 +191,7 @@ def main_worker(args):
         precision=args.precision, 
         callbacks=[img_logger, cp_callback], 
         logger=tb_logger, 
-        devices=args.devices,
+        devices=1,
         accelerator="gpu", 
         strategy="ddp", 
         max_epochs=args.max_epochs, 
