@@ -15,7 +15,7 @@ from cldm.logger import ImageLogger
 from cldm.model import create_model, load_state_dict
 from utils import save_args
 
-WORKERS = 4
+WORKERS = 2
 
 def build_args():
     parser = argparse.ArgumentParser()
@@ -23,7 +23,7 @@ def build_args():
     parser.add_argument("--data_root_dir", type=str, default="./DATA/zalando-hd-resized")
     parser.add_argument("--category", type=str, default=None, choices=["upper", "lower_body", "dresses"])
     parser.add_argument("--vae_load_path", type=str, default="./ckpts/VITONHD_VAE_finetuning.ckpt")
-    parser.add_argument("--batch_size", "-bs",  type=int, default=32)
+    parser.add_argument("--batch_size", "-bs",  type=int, default=4)
     parser.add_argument("--transform_size", default=None, nargs="+", choices=["crop", "hflip", "shiftscale", "shiftscale2", "shiftscale3", "resize"])
     parser.add_argument("--transform_color", default=None, nargs="+", choices=["hsv", "bright_contrast", "colorjitter", "resize"])
     parser.add_argument("--use_atv_loss", action="store_true")
